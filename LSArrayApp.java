@@ -13,6 +13,13 @@ public static void main(String[] args){
 	if(!input.equals("")){
 
 		arrIn = input.split(" ");
+
+		if(arrIn.length<3){
+			
+			System.out.println("Please enter a valid input in the form stage_month_time");
+			System.exit(0);
+
+		}
 		printAreas pA = new printAreas(arrIn[0], arrIn[1], arrIn[2]);
 		String s = pA.toString();
 		opNo = pA.getCount();

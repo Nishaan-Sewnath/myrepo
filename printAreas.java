@@ -46,13 +46,19 @@ private int opCounter = 0;
 		val = input.split(" ");	
 		opCounter++;
 		if(fInput.equals(val[0])){
-		
+			
 			while(count<val.length-1){
 			count++;
 			temp = temp + val[count]+ " ";
 			}
 
 			break;
+
+		}else if(j==arrIn.length-1){
+
+			
+			System.out.println("Data not found!");
+
 
 		}
 

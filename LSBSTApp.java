@@ -33,7 +33,6 @@ class LSBSTApp{
 	public void insert(String data, Node n){
 	
 
-		IopCounter++;
 		if(data.compareTo(n.getData()) <= 0){
 			
 
@@ -110,18 +109,17 @@ class LSBSTApp{
 		String temp = n.getData();
 		String temp1 = temp.substring( 0, temp.indexOf(" "));	
 		int cmp = data.compareTo(temp1);
-		opCounter++;
 		if(cmp == 0){
-			
+			opCounter++;
 			System.out.println(temp.substring(temp.indexOf(" ")+1));
 			return n;
 
 		}else if(cmp < 0){
-		
+			opCounter++;
 			return (n.getLeftChild() == null) ? null : search(data, n.getLeftChild());
 
 		}else{
-		
+			opCounter++;
 			return (n.getRightChild() == null) ? null : search(data, n.getRightChild());
 
 		}
@@ -179,7 +177,7 @@ class LSBSTApp{
 
 
 		}
-		System.out.println("The number of operations used is: "+ theTree.opCounter + " " + theTree.IopCounter);
+		System.out.println("The number of operations used for search is: "+ theTree.opCounter + " and the number of operations used to read the files into the binary search tree and to print the data is: "+ theTree.IopCounter);
 
 
 	}
