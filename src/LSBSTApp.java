@@ -74,6 +74,7 @@ class LSBSTApp{
 
 	public void inOrderTraverseTree(Node n ){
 
+
 		if(n != null){
 
 			inOrderTraverseTree(n.getLeftChild());
@@ -85,6 +86,8 @@ class LSBSTApp{
 
 
 	}
+
+
 
 	public Node search(String data){
 		
@@ -131,13 +134,21 @@ class LSBSTApp{
 	public static void main(String[] args){
 
 		LSBSTApp theTree = new LSBSTApp();
-		File file;
+
+		int Wcount; = 0;
+		
+
+
+
 		String temp = "";	
 
 	
 		try{
+			Scanner kb = new Scanner(System.in);
+	                String fileName = kb.nextLine(); 
+
 		
-			file = new File("/home/nirata/SWNNIS001/Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+			file = new File("/home/nirata/SWNNIS001/"+fileName);
 			Scanner fl = new Scanner(file);
 
 			while(fl.hasNext()){
@@ -164,7 +175,6 @@ class LSBSTApp{
 		Scanner kb = new Scanner(System.in);
 		String input = kb.nextLine();
 		String fInput = input.replace(' ', '_');
-		
 		if(!(input.equals(""))){
 
 			
@@ -177,7 +187,7 @@ class LSBSTApp{
 
 
 		}
-		System.out.println("The number of operations used for search is: "+ theTree.opCounter + " and the number of operations used to read the files into the binary search tree and to print the data is: "+ theTree.IopCounter);
+		System.out.println("The number of operations used for search is: "+ theTree.opCounter);
 
 
 	}
